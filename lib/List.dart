@@ -1,3 +1,4 @@
+import 'package:book_list/Book.dart';
 import 'package:flutter/material.dart';
 
 import 'BookCard.dart';
@@ -5,29 +6,24 @@ import 'BookCard.dart';
 class BookList extends StatefulWidget {
   @override
   _BookListState createState() => _BookListState();
+  List<Book> bookList;
+  Function delete;
+  BookList({required this.delete, required this.bookList});
 }
 
 class _BookListState extends State<BookList> {
-  List<String> bookList = ["Nome do vento", "Harry Potter"];
-
-  void delete(int index) {
-    setState(() {
-      bookList.removeAt(index);
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
       child: ListView.builder(
         itemBuilder: (BuildContext context, int index) {
           return BookCard(
-            titulo: bookList[index],
-            function: delete,
+            bk: widget.bookList[index],
+            function: widget.delete,
             id: index,
           );
         },
-        itemCount: bookList.length,
+        itemCount: widget.bookList.length,
       ),
     );
   }

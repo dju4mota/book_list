@@ -20,7 +20,7 @@ class _NewBookState extends State<NewBook> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "New Book",
+          "Adicionar novo livro",
         ),
         backgroundColor: Color.fromARGB(255, 234, 154, 98),
         elevation: 0,

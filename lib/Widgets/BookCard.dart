@@ -26,30 +26,39 @@ class _BookCardState extends State<BookCard> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       "Título: " + widget.bk.titulo,
                       style: TextStyle(
-                        fontSize: 23,
+                        fontSize: 27,
                         fontFamily: 'Proxima Nova',
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
-                    Text(
-                      "Páginas: " + widget.bk.numeroPaginas.toString(),
-                      style: TextStyle(
-                        fontSize: 23,
-                        fontFamily: 'Proxima Nova',
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    Text(
-                      "Nota: " + widget.bk.nota.toString(),
-                      style: TextStyle(
-                        fontSize: 23,
-                        fontFamily: 'Proxima Nova',
-                        fontWeight: FontWeight.w500,
+                    Container(
+                      width: 210,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Páginas: " + widget.bk.numeroPaginas.toString(),
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontFamily: 'Proxima Nova',
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          Text(
+                            "Nota: " + widget.bk.nota.toString(),
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontFamily: 'Proxima Nova',
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],

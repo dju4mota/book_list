@@ -10,7 +10,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List<Book> bookList = [Book(titulo: "Nome do Vento", numeroPaginas: "767", nota: "10")];
+  List<Book> bookList = [];
 
   void add(Book bk) {
     setState(() {

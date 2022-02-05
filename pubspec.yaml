@@ -46,7 +46,7 @@ flutter:
         - asset: fonts/Ubuntu-Light.ttf
     - family: Proxima Nova
       fonts:
-      - asset: fonts/Proxima Nova Extra Condensed Light.otf
+      - asset: fonts/Proxima Nova ScOsf Light.otf
 
 
   # The following line ensures that the Material Icons font is

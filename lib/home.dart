@@ -1,8 +1,8 @@
-import 'package:book_list/List.dart';
-import 'package:book_list/NewBook.dart';
 import 'package:flutter/material.dart';
 
-import 'Book.dart';
+import 'Model/Book.dart';
+import 'Screen/NewBook.dart';
+import 'Widgets/List.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -10,7 +10,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List<Book> bookList = [Book("Nome do Vento", 767, 10), Book("Ruff Ghanor", 397, 9.0)];
+  List<Book> bookList = [Book(titulo: "Nome do Vento", numeroPaginas: "767", nota: "10")];
 
   void add(Book bk) {
     setState(() {
@@ -28,7 +28,30 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Book List",
-      theme: ThemeData(),
+      theme: ThemeData(
+        primaryColor: Color.fromARGB(255, 234, 154, 98),
+        scaffoldBackgroundColor: Color.fromARGB(255, 255, 236, 218),
+        appBarTheme: AppBarTheme(
+          backgroundColor: Color.fromARGB(255, 234, 154, 98),
+          elevation: 0,
+        ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: Color.fromARGB(255, 69, 130, 164),
+          elevation: 0,
+        ),
+//        fontFamily: "Ubuntu",
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            padding: MaterialStateProperty.all(EdgeInsets.all(13)),
+            backgroundColor: MaterialStateProperty.all(
+              Color.fromARGB(255, 69, 130, 164),
+            ),
+            textStyle: MaterialStateProperty.all(
+              TextStyle(fontSize: 20),
+            ),
+          ),
+        ),
+      ),
       home: Scaffold(
         appBar: AppBar(
           title: Text("BookList"),
@@ -37,7 +60,6 @@ class _HomeState extends State<Home> {
           delete: delete,
           bookList: bookList,
         ),
-        backgroundColor: Colors.blueGrey,
         floatingActionButton: Builder(
           builder: (context) => FloatingActionButton(
             onPressed: () => Navigator.push(

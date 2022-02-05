@@ -1,6 +1,6 @@
-import 'package:book_list/Book.dart';
 import 'package:flutter/material.dart';
 
+import '../Model/Book.dart';
 import 'BookCard.dart';
 
 class BookList extends StatefulWidget {
